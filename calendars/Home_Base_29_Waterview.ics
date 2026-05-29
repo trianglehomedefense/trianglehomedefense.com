@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Home Base / 29 Waterview
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260529-home-base-property-planning@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260529T140000
+DTEND;TZID=America/New_York:20260529T160000
+SUMMARY:Property planning block
+DESCRIPTION:Plan maintenance\, readiness\, repairs\, and household tasks for 29 Waterview.
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+BEGIN:VEVENT
+UID:20260701-home-base-quarterly-inspection@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260701T090000
+DTEND;TZID=America/New_York:20260701T110000
+SUMMARY:Quarterly Home Base inspection
+DESCRIPTION:Quarterly crawlspace\, moisture\, access-point\, exterior\, and household readiness review.
+RRULE:FREQ=YEARLY;BYMONTH=1,4,7,10;BYMONTHDAY=1
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Lead Follow-Up / Sales Pipeline
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260602-lead-follow-up-block@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260602T090000
+DTEND;TZID=America/New_York:20260602T100000
+SUMMARY:Lead follow-up block
+DESCRIPTION:Follow up on leads\, send estimates/reports\, update SIMPLE_LEAD_PIPELINE\, and schedule inspections.
+RRULE:FREQ=WEEKLY;BYDAY=TU,FR
+END:VEVENT
+END:VCALENDAR

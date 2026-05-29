@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Vehicle / Phone / Critical Infrastructure
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260602-vehicle-phone-follow-up@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260602T150000
+DTEND;TZID=America/New_York:20260602T160000
+SUMMARY:Vehicle / phone follow-up block
+DESCRIPTION:Review vehicle status\, phone reliability\, service appointments\, utilities\, and critical blockers.
+RRULE:FREQ=WEEKLY;BYDAY=TU
+END:VEVENT
+BEGIN:VEVENT
+UID:20260601-generator-backup-systems-test@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260601T100000
+DTEND;TZID=America/New_York:20260601T110000
+SUMMARY:Quarterly generator / backup systems test
+DESCRIPTION:Test generator\, backup power\, key communications\, and critical household systems.
+RRULE:FREQ=YEARLY;BYMONTH=3,6,9,12;BYDAY=1MO
+END:VEVENT
+END:VCALENDAR

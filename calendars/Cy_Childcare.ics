@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Cy / Childcare
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260601-cy-morning-childcare-handoff@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260601T080000
+DTEND;TZID=America/New_York:20260601T081500
+SUMMARY:Morning childcare handoff
+DESCRIPTION:Confirm Cy's care plan\, schedule\, pickup/dropoff\, and urgent notes.
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+END:VEVENT
+BEGIN:VEVENT
+UID:20260601-cy-evening-childcare-handoff@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260601T170000
+DTEND;TZID=America/New_York:20260601T171500
+SUMMARY:Evening childcare handoff
+DESCRIPTION:Confirm Cy's evening status\, next-day needs\, and caregiver notes.
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+END:VEVENT
+END:VCALENDAR

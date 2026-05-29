@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:THD Operations
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260601-thd-operations-review@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260601T103000
+DTEND;TZID=America/New_York:20260601T110000
+SUMMARY:THD operations review
+DESCRIPTION:Review inspections\, field work\, tools\, materials\, and client scheduling.
+RRULE:FREQ=WEEKLY;BYDAY=MO
+END:VEVENT
+END:VCALENDAR

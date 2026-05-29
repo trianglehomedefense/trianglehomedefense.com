@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:THD Growth / Admin
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260601-thd-admin-block@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260601T080000
+DTEND;TZID=America/New_York:20260601T100000
+SUMMARY:THD admin block
+DESCRIPTION:Email\, bookkeeping\, estimates\, website\, documentation\, admin.
+RRULE:FREQ=WEEKLY;BYDAY=MO,TH
+END:VEVENT
+BEGIN:VEVENT
+UID:20260603-thd-website-socials-block@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260603T100000
+DTEND;TZID=America/New_York:20260603T110000
+SUMMARY:Website/socials block
+DESCRIPTION:Website updates\, social posts\, service photos\, local credibility assets.
+RRULE:FREQ=WEEKLY;BYDAY=WE
+END:VEVENT
+BEGIN:VEVENT
+UID:20260604-thd-money-path-review@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260604T160000
+DTEND;TZID=America/New_York:20260604T170000
+SUMMARY:Weekly money-path review
+DESCRIPTION:Review immediate cash\, invoices\, expenses\, near-term THD revenue\, and next money action.
+RRULE:FREQ=WEEKLY;BYDAY=TH
+END:VEVENT
+END:VCALENDAR

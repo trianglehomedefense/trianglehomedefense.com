@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Murphy / Mossy Pass Property
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260529-murphy-mossy-pass-planning@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260529T140000
+DTEND;TZID=America/New_York:20260529T160000
+SUMMARY:Murphy / Mossy Pass planning block
+DESCRIPTION:Personal/family stewardship planning for Murphy / Mossy Pass. Keep separate from public THD service.
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+BEGIN:VEVENT
+UID:20270501-murphy-property-stewardship-weekend@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20270501T090000
+DTEND;TZID=America/New_York:20270501T170000
+SUMMARY:Annual Murphy property stewardship weekend
+DESCRIPTION:Family stewardship\, maintenance\, land history\, and long-term usability planning.
+RRULE:FREQ=YEARLY;BYMONTH=5;BYDAY=1SA
+END:VEVENT
+END:VCALENDAR

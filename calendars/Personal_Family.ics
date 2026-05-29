@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:-//Triangle Home Defense//Calendar System//EN
+X-WR-CALNAME:Personal / Family
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:20260529-personal-family-daily-checkin@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260529T193000
+DTEND;TZID=America/New_York:20260529T194500
+SUMMARY:Daily family check-in
+DESCRIPTION:Daily family check-in to confirm updates\, tomorrow's plan\, and urgent needs.
+RRULE:FREQ=DAILY
+END:VEVENT
+BEGIN:VEVENT
+UID:20260531-personal-family-weekly-planning@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260531T160000
+DTEND;TZID=America/New_York:20260531T170000
+SUMMARY:Weekly planning meeting
+DESCRIPTION:Review family calendar\, household needs\, business issues\, money path\, and delegation.
+RRULE:FREQ=WEEKLY;BYDAY=SU
+END:VEVENT
+BEGIN:VEVENT
+UID:20260531-personal-family-physical-calendar-transfer@trianglehomedefense.com
+DTSTAMP:20260529T140000Z
+DTSTART;TZID=America/New_York:20260531T173000
+DTEND;TZID=America/New_York:20260531T180000
+SUMMARY:Physical calendar transfer
+DESCRIPTION:Transfer key digital calendar items to the physical household board.
+RRULE:FREQ=WEEKLY;BYDAY=SU
+END:VEVENT
+END:VCALENDAR
