@@ -181,10 +181,13 @@ ul {
 
 .brand img {
   flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
   border: 1px solid rgba(238, 227, 204, .24);
   border-radius: 7px;
   background: rgba(238, 227, 204, .07);
   filter: sepia(.24) contrast(1.14) drop-shadow(0 5px 10px rgba(0, 0, 0, .4));
+  object-fit: contain;
 }
 
 .brand strong {
@@ -714,11 +717,13 @@ button.btn {
   }
 
   .topbar {
-    letter-spacing: .08em;
+    font-size: .7rem;
+    letter-spacing: .05em;
   }
 
   .topbar-inner {
     display: block;
+    overflow-wrap: anywhere;
   }
 
   .brand {
