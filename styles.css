@@ -1,18 +1,18 @@
 :root {
-  --night: #11110f;
-  --black-green: #18231d;
-  --field-green: #344135;
-  --moss: #596248;
-  --garnet: #6f1d1d;
-  --rust: #9c3a27;
-  --stone: #c9bda5;
-  --bone: #eee3cc;
-  --paper: #d9c9aa;
-  --ink: #161512;
-  --muted: #958b78;
-  --line-dark: rgba(238, 227, 204, .18);
-  --line-light: rgba(54, 42, 33, .28);
-  --shadow: 0 22px 50px rgba(0, 0, 0, .34);
+  --black: #0d0c0b;
+  --charcoal: #171513;
+  --ash: #272421;
+  --garnet: #651d1d;
+  --red-rock: #8f3028;
+  --dark-red: #351211;
+  --bone: #eee1c8;
+  --paper: #d8c6a6;
+  --aged-paper: #cbb58f;
+  --stone: #a79b87;
+  --ink: #181512;
+  --line-dark: rgba(238, 225, 200, .2);
+  --line-paper: rgba(49, 35, 28, .3);
+  --shadow: 0 24px 58px rgba(0, 0, 0, .42);
 }
 
 * {
@@ -25,13 +25,13 @@ html {
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   color: var(--bone);
   background:
-    linear-gradient(rgba(17, 17, 15, .86), rgba(17, 17, 15, .86)),
+    linear-gradient(rgba(13, 12, 11, .9), rgba(13, 12, 11, .9)),
     url("garnet-schist.jpg") center / cover fixed,
-    var(--night);
-  line-height: 1.55;
+    var(--black);
+  line-height: 1.58;
 }
 
 body::before {
@@ -40,13 +40,10 @@ body::before {
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  opacity: .15;
-  background-image:
-    linear-gradient(rgba(238, 227, 204, .05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(238, 227, 204, .035) 1px, transparent 1px),
-    radial-gradient(circle at 28px 28px, rgba(238, 227, 204, .08) 1px, transparent 2px);
-  background-size: 56px 56px, 56px 56px, 112px 112px;
-  mix-blend-mode: screen;
+  opacity: .16;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .035) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, .58));
 }
 
 body::after {
@@ -55,10 +52,11 @@ body::after {
   inset: 0;
   z-index: 51;
   pointer-events: none;
-  opacity: .16;
-  background:
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, .04) 0 1px, transparent 1px 4px),
-    radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, .52));
+  opacity: .17;
+  background-image:
+    linear-gradient(rgba(238, 225, 200, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 225, 200, .035) 1px, transparent 1px);
+  background-size: 72px 72px;
 }
 
 img {
@@ -74,27 +72,28 @@ h1,
 h2,
 h3 {
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.02;
+  line-height: 1.04;
   margin: 0 0 16px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 h1 {
-  max-width: 860px;
-  color: #f3ead8;
-  font-size: clamp(2.75rem, 7vw, 6.25rem);
-  text-shadow: 0 4px 20px rgba(0, 0, 0, .62);
+  max-width: 780px;
+  color: #f4ead7;
+  font-size: clamp(2.35rem, 5.7vw, 5rem);
+  letter-spacing: 0;
+  text-shadow: 0 5px 24px rgba(0, 0, 0, .68);
 }
 
 h2 {
-  max-width: 920px;
-  color: #f0e4cc;
-  font-size: clamp(2rem, 4vw, 3.45rem);
+  max-width: 900px;
+  color: #f0e3cc;
+  font-size: clamp(1.85rem, 3.4vw, 3rem);
 }
 
 h3 {
   color: var(--bone);
-  font-size: 1.42rem;
+  font-size: 1.35rem;
 }
 
 p {
@@ -111,7 +110,7 @@ ul {
   top: -60px;
   z-index: 100;
   background: var(--bone);
-  color: var(--night);
+  color: var(--black);
   padding: 10px 12px;
 }
 
@@ -129,20 +128,17 @@ ul {
 }
 
 .topbar {
-  background: #121512;
-  border-bottom: 1px solid rgba(238, 227, 204, .14);
+  background: #0a0908;
+  border-bottom: 1px solid rgba(238, 225, 200, .15);
   color: var(--stone);
-  font-size: .78rem;
-  font-weight: 800;
-  letter-spacing: .16em;
-  text-transform: uppercase;
+  font-size: .86rem;
 }
 
 .topbar-inner {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 9px 0;
+  padding: 8px 0;
   flex-wrap: wrap;
 }
 
@@ -156,9 +152,10 @@ ul {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(19, 22, 18, .94);
-  border-bottom: 1px solid rgba(238, 227, 204, .16);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, .28);
+  background:
+    linear-gradient(90deg, rgba(13, 12, 11, .96), rgba(31, 18, 16, .94));
+  border-bottom: 1px solid rgba(238, 225, 200, .16);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .35);
   backdrop-filter: blur(12px);
 }
 
@@ -181,30 +178,30 @@ ul {
 
 .brand img {
   flex: 0 0 56px;
-  width: 56px;
-  height: 56px;
-  border: 1px solid rgba(238, 227, 204, .24);
-  border-radius: 7px;
-  background: rgba(238, 227, 204, .07);
-  filter: sepia(.24) contrast(1.14) drop-shadow(0 5px 10px rgba(0, 0, 0, .4));
+  width: 56px !important;
+  height: 56px !important;
+  max-width: 56px !important;
+  max-height: 56px !important;
+  border: 1px solid rgba(238, 225, 200, .24);
+  border-radius: 6px;
+  background: rgba(238, 225, 200, .06);
   object-fit: contain;
+  filter: grayscale(.2) sepia(.18) contrast(1.08) drop-shadow(0 5px 10px rgba(0, 0, 0, .46));
 }
 
 .brand strong {
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.06rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: .02em;
 }
 
 .brand small {
   display: block;
   color: var(--stone);
-  font-size: .66rem;
-  font-weight: 800;
-  letter-spacing: .16em;
-  text-transform: uppercase;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
 }
 
 .links {
@@ -218,26 +215,24 @@ ul {
 .links a {
   border-radius: 4px;
   color: var(--bone);
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .09em;
-  padding: 10px 11px;
+  font-size: .9rem;
+  font-weight: 800;
+  padding: 9px 10px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .links a:hover,
 .links a:focus,
 .links a[aria-current="page"] {
-  background: rgba(238, 227, 204, .12);
-  color: #fff6e4;
+  background: rgba(238, 225, 200, .12);
+  color: #fff4df;
 }
 
 .links .nav-cta {
-  background: var(--garnet);
-  color: #fff3df;
+  background: linear-gradient(180deg, #7a2522, #4a1716);
+  color: #fff2dd;
   margin-left: 4px;
-  box-shadow: inset 0 0 0 1px rgba(238, 227, 204, .25);
+  box-shadow: inset 0 0 0 1px rgba(238, 225, 200, .25);
 }
 
 .hero {
@@ -245,9 +240,9 @@ ul {
   overflow: hidden;
   color: var(--bone);
   background:
-    linear-gradient(90deg, rgba(8, 8, 7, .92) 0%, rgba(18, 21, 17, .78) 48%, rgba(74, 23, 19, .58) 100%),
+    linear-gradient(90deg, rgba(7, 7, 6, .9) 0%, rgba(15, 13, 12, .74) 48%, rgba(76, 17, 17, .76) 100%),
     url("garnet-schist.jpg") right center / cover,
-    var(--night);
+    var(--black);
 }
 
 .hero::before,
@@ -257,10 +252,11 @@ ul {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: .4;
+  opacity: .3;
   background:
-    linear-gradient(120deg, transparent 0 45%, rgba(156, 58, 39, .32) 45.2% 45.8%, transparent 46%),
-    repeating-linear-gradient(90deg, transparent 0 88px, rgba(238, 227, 204, .035) 89px 90px);
+    radial-gradient(circle at 50% 12%, rgba(238, 225, 200, .12), transparent 22%),
+    linear-gradient(125deg, transparent 0 54%, rgba(143, 48, 40, .32) 54.2% 54.8%, transparent 55%),
+    repeating-linear-gradient(90deg, transparent 0 96px, rgba(238, 225, 200, .03) 97px 98px);
 }
 
 .hero::after,
@@ -269,42 +265,41 @@ ul {
   content: "";
   position: absolute;
   inset: auto 0 0 0;
-  height: 10px;
-  background: linear-gradient(90deg, var(--garnet), var(--stone), var(--moss), var(--rust));
-  opacity: .92;
+  height: 8px;
+  background: linear-gradient(90deg, var(--dark-red), var(--red-rock), var(--bone), var(--garnet));
+  opacity: .9;
 }
 
 .hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
   gap: 36px;
   align-items: center;
-  min-height: 650px;
-  padding: 78px 0 92px;
+  min-height: 640px;
+  padding: 76px 0 90px;
 }
 
 .hero-copy {
-  border-left: 3px solid var(--rust);
+  border-left: 2px solid var(--red-rock);
   padding-left: 24px;
 }
 
 .hero-subhead {
   max-width: 760px;
-  color: #e6dcc8;
-  font-size: clamp(1.08rem, 2vw, 1.34rem);
+  color: #e3d6be;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
   font-weight: 700;
 }
 
 .eyebrow,
 .kicker {
-  color: var(--rust);
-  font-size: .72rem;
-  font-weight: 900;
-  letter-spacing: .22em;
+  color: #b64a3f;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .08em;
   margin-bottom: 12px;
-  text-transform: uppercase;
 }
 
 .light {
@@ -323,49 +318,47 @@ ul {
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  border: 1px solid rgba(238, 227, 204, .52);
+  border: 1px solid rgba(238, 225, 200, .54);
   border-radius: 4px;
-  background: linear-gradient(180deg, #8d3026, #5f1b1b);
+  background: linear-gradient(180deg, #8a3028, #5c1c1a);
   color: #fff0dc;
-  font-weight: 900;
-  letter-spacing: .04em;
+  font-weight: 800;
   padding: 12px 17px;
   text-decoration: none;
-  text-transform: uppercase;
   box-shadow: 0 4px 0 rgba(0, 0, 0, .38), inset 0 0 0 1px rgba(255, 255, 255, .08);
 }
 
 .btn.secondary {
-  background: rgba(20, 20, 18, .62);
+  background: rgba(14, 13, 12, .62);
   color: var(--bone);
 }
 
 .btn.light {
   border-color: var(--bone);
   background: var(--bone);
-  color: var(--night);
+  color: var(--black);
 }
 
 .hero-card {
-  border: 1px solid rgba(238, 227, 204, .32);
+  border: 1px solid rgba(238, 225, 200, .32);
   border-radius: 6px;
   background:
-    linear-gradient(135deg, rgba(238, 227, 204, .13), rgba(17, 17, 15, .75)),
-    rgba(20, 19, 17, .78);
+    linear-gradient(145deg, rgba(238, 225, 200, .1), rgba(0, 0, 0, .2)),
+    rgba(20, 18, 16, .82);
   box-shadow: var(--shadow);
   padding: 26px;
 }
 
 .hero-card img {
   display: block;
-  width: 118px;
+  width: 112px;
   margin-bottom: 18px;
-  filter: sepia(.22) contrast(1.18);
+  filter: grayscale(.2) sepia(.18) contrast(1.08);
 }
 
 .hero-card h2 {
-  color: #f0e6d2;
-  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  color: #f0e4cc;
+  font-size: clamp(1.5rem, 2.7vw, 2.25rem);
 }
 
 .check-list {
@@ -374,7 +367,7 @@ ul {
 }
 
 .check-list li {
-  border-top: 1px solid rgba(238, 227, 204, .2);
+  border-top: 1px solid rgba(238, 225, 200, .2);
   color: var(--stone);
   font-weight: 800;
   padding: 10px 0;
@@ -382,34 +375,35 @@ ul {
 
 .section {
   padding: 74px 0;
-  background: rgba(17, 17, 15, .9);
+  background: rgba(13, 12, 11, .91);
 }
 
 .intro-section {
   padding: 46px 0;
   background:
-    linear-gradient(90deg, rgba(111, 29, 29, .32), rgba(17, 17, 15, .92)),
-    var(--night);
+    linear-gradient(90deg, rgba(74, 18, 18, .42), rgba(13, 12, 11, .94)),
+    var(--black);
   border-block: 1px solid var(--line-dark);
 }
 
 .tinted {
   background:
-    linear-gradient(135deg, rgba(217, 201, 170, .94), rgba(198, 179, 142, .88)),
+    linear-gradient(rgba(216, 198, 166, .94), rgba(216, 198, 166, .94)),
+    url("garnet-schist.jpg") center / cover,
     var(--paper);
-  border-block: 1px solid rgba(238, 227, 204, .18);
+  border-block: 1px solid rgba(238, 225, 200, .18);
   color: var(--ink);
 }
 
 .tinted h2,
 .tinted h3 {
-  color: #3b201b;
+  color: #3b1715;
 }
 
 .lead {
   color: #f1e7d4;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.25rem, 2vw, 1.58rem);
+  font-size: clamp(1.18rem, 2vw, 1.48rem);
   font-weight: 700;
 }
 
@@ -422,7 +416,7 @@ ul {
 
 .scope-note {
   border-left: 4px solid var(--garnet);
-  color: #442720;
+  color: #44201d;
   font-weight: 800;
   padding-left: 14px;
 }
@@ -439,8 +433,8 @@ ul {
   border: 1px solid var(--line-dark);
   border-radius: 6px;
   background:
-    linear-gradient(145deg, rgba(238, 227, 204, .08), rgba(0, 0, 0, .1)),
-    rgba(28, 30, 25, .82);
+    linear-gradient(145deg, rgba(238, 225, 200, .08), rgba(0, 0, 0, .14)),
+    rgba(25, 22, 20, .84);
   padding: 22px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, .24);
 }
@@ -458,9 +452,9 @@ ul {
   overflow: hidden;
   color: var(--bone);
   background:
-    linear-gradient(110deg, rgba(14, 16, 14, .96), rgba(28, 41, 33, .84), rgba(85, 27, 24, .62)),
+    linear-gradient(110deg, rgba(11, 10, 9, .96), rgba(29, 18, 16, .88), rgba(95, 26, 23, .66)),
     url("garnet-schist.jpg") center / cover,
-    var(--night);
+    var(--black);
 }
 
 .field-band .wrap {
@@ -470,14 +464,14 @@ ul {
 
 .field-image {
   display: block;
-  max-width: 260px;
-  border: 1px solid rgba(238, 227, 204, .32);
+  max-width: 250px;
+  border: 1px solid rgba(238, 225, 200, .32);
   border-radius: 6px;
   background: rgba(0, 0, 0, .24);
   box-shadow: var(--shadow);
   margin-top: 20px;
   padding: 16px;
-  filter: sepia(.22) contrast(1.18);
+  filter: grayscale(.2) sepia(.18) contrast(1.08);
 }
 
 .area-list {
@@ -488,21 +482,20 @@ ul {
 }
 
 .area-list span {
-  border: 1px solid rgba(238, 227, 204, .25);
+  border: 1px solid rgba(238, 225, 200, .25);
   border-radius: 4px;
-  background: rgba(238, 227, 204, .08);
+  background: rgba(238, 225, 200, .08);
   color: var(--bone);
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  padding: 9px 12px;
-  text-transform: uppercase;
+  font-weight: 800;
+  padding: 8px 12px;
 }
 
 .cta-band {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #1b241e, #611f1d);
+  background:
+    linear-gradient(90deg, rgba(13, 12, 11, .96), rgba(92, 25, 22, .88)),
+    url("garnet-schist.jpg") center / cover;
   color: var(--bone);
   padding: 56px 0 64px;
 }
@@ -515,7 +508,7 @@ ul {
 }
 
 .footer {
-  background: #0d0d0c;
+  background: #0a0908;
   color: #e7dcc6;
   padding: 36px 0 28px;
 }
@@ -528,11 +521,11 @@ ul {
 
 .footer img {
   margin-bottom: 10px;
-  filter: sepia(.24) contrast(1.14);
+  filter: grayscale(.2) sepia(.18) contrast(1.08);
 }
 
 .fine-print {
-  border-top: 1px solid rgba(238, 227, 204, .16);
+  border-top: 1px solid rgba(238, 225, 200, .16);
   color: #c7bba5;
   font-size: .85rem;
   margin-top: 22px;
@@ -544,9 +537,9 @@ ul {
   overflow: hidden;
   color: var(--bone);
   background:
-    linear-gradient(105deg, rgba(13, 13, 12, .95), rgba(34, 49, 39, .83), rgba(94, 30, 27, .54)),
+    linear-gradient(105deg, rgba(10, 9, 8, .95), rgba(26, 18, 16, .88), rgba(92, 25, 22, .6)),
     url("garnet-schist.jpg") center / cover,
-    var(--night);
+    var(--black);
   padding: 62px 0 70px;
 }
 
@@ -563,11 +556,10 @@ ul {
 
 .breadcrumb {
   color: var(--stone);
-  font-size: .75rem;
-  font-weight: 900;
-  letter-spacing: .18em;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .06em;
   margin-bottom: 16px;
-  text-transform: uppercase;
 }
 
 .content-grid {
@@ -579,10 +571,11 @@ ul {
 
 .side-panel,
 .form-panel {
-  border: 1px solid var(--line-light);
+  border: 1px solid var(--line-paper);
   border-radius: 6px;
   background:
-    linear-gradient(145deg, rgba(247, 237, 215, .96), rgba(207, 190, 155, .94));
+    linear-gradient(rgba(238, 225, 200, .95), rgba(207, 186, 150, .94)),
+    var(--paper);
   color: var(--ink);
   padding: 22px;
   box-shadow: 0 18px 38px rgba(0, 0, 0, .24);
@@ -592,7 +585,7 @@ ul {
 .side-panel h3,
 .form-panel h2,
 .form-panel h3 {
-  color: #421d1b;
+  color: #421a18;
 }
 
 .service-block,
@@ -616,7 +609,7 @@ ul {
 
 .note-box {
   border-left: 5px solid var(--garnet);
-  background: rgba(111, 29, 29, .16);
+  background: rgba(101, 29, 29, .16);
   padding: 16px;
 }
 
@@ -626,7 +619,7 @@ ul {
 }
 
 .contact-list a {
-  color: #551f1d;
+  color: #551c1a;
   font-weight: 900;
 }
 
@@ -638,10 +631,8 @@ form {
 label {
   display: grid;
   gap: 6px;
-  color: #3f211c;
+  color: #3f1f1b;
   font-weight: 900;
-  letter-spacing: .04em;
-  text-transform: uppercase;
 }
 
 input,
@@ -717,8 +708,7 @@ button.btn {
   }
 
   .topbar {
-    font-size: .7rem;
-    letter-spacing: .05em;
+    font-size: .72rem;
   }
 
   .topbar-inner {
@@ -731,7 +721,7 @@ button.btn {
   }
 
   .brand small {
-    letter-spacing: .08em;
+    letter-spacing: .04em;
   }
 
   .links {
@@ -739,13 +729,17 @@ button.btn {
   }
 
   .links a {
-    font-size: .72rem;
+    font-size: .82rem;
     padding: 8px 9px;
   }
 
   .hero-copy {
     border-left: 0;
     padding-left: 0;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .card-grid {
