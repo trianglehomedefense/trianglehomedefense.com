@@ -1079,3 +1079,585 @@ h3 {
     flex-direction: column;
   }
 }
+
+/* Weathered field-poster pass: lean on the road image, soften the UI, reduce hard geometry. */
+:root {
+  --night: #050607;
+  --deep: #0b0b0a;
+  --paper: #eee3d1;
+  --paper-soft: rgba(238, 227, 209, 0.88);
+  --muted: #c8bba7;
+  --muted-dark: #988a78;
+  --red: #d51f2e;
+  --red-2: #8f1720;
+  --garnet: #5e1620;
+  --line: rgba(213, 31, 46, 0.72);
+  --line-soft: rgba(238, 227, 209, 0.22);
+  --blue-line: rgba(238, 227, 209, 0.16);
+}
+
+body {
+  background: #030405;
+}
+
+body::before {
+  opacity: 0.32;
+  background-image:
+    linear-gradient(180deg, rgba(3, 4, 5, 0.22), rgba(3, 4, 5, 0.94)),
+    image-set(
+      url("assets/appalachian-road-hero.webp") type("image/webp"),
+      url("assets/appalachian-road-hero.jpg") type("image/jpeg")
+    );
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  mask-image: none;
+}
+
+body::after {
+  opacity: 0.34;
+  background:
+    repeating-linear-gradient(96deg, transparent 0 12px, rgba(238, 227, 209, 0.035) 13px, transparent 15px),
+    repeating-linear-gradient(3deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 7px),
+    radial-gradient(circle at 72% 20%, rgba(111, 24, 31, 0.2), transparent 22rem);
+}
+
+.site-header {
+  background:
+    linear-gradient(180deg, rgba(3, 4, 5, 0.9), rgba(3, 4, 5, 0.48)),
+    repeating-linear-gradient(94deg, rgba(238, 227, 209, 0.03) 0 1px, transparent 1px 12px);
+  border-bottom-color: rgba(238, 227, 209, 0.18);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.38);
+}
+
+.brand-mark {
+  position: relative;
+  gap: 0.7rem;
+  padding: 5px 10px 5px 6px;
+  border: 1px solid rgba(238, 227, 209, 0.2);
+  border-radius: 3px 12px 4px 10px;
+  background:
+    linear-gradient(180deg, rgba(7, 7, 6, 0.74), rgba(20, 14, 12, 0.48)),
+    rgba(3, 4, 5, 0.36);
+  box-shadow: inset 0 0 0 1px rgba(213, 31, 46, 0.08), 0 10px 24px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background:
+    repeating-linear-gradient(100deg, transparent 0 9px, rgba(238, 227, 209, 0.08) 10px, transparent 12px),
+    radial-gradient(circle at 18% 28%, rgba(213, 31, 46, 0.24), transparent 4rem);
+}
+
+.brand-logo {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: clamp(48px, 6vw, 70px);
+  max-width: clamp(76px, 11vw, 106px);
+  object-fit: contain;
+}
+
+.brand-copy {
+  position: relative;
+  z-index: 1;
+  color: var(--paper);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.nav-cta,
+.button,
+.contact-direct a {
+  border-color: rgba(238, 227, 209, 0.3);
+  border-radius: 3px 12px 4px 10px;
+  box-shadow: inset 0 0 0 1px rgba(3, 4, 5, 0.26);
+}
+
+.button.primary {
+  background:
+    linear-gradient(180deg, #f03743, var(--red-2)),
+    var(--red);
+  color: var(--paper);
+}
+
+.button.ghost {
+  background: rgba(3, 4, 5, 0.42);
+}
+
+.hero-bg {
+  background-image:
+    linear-gradient(90deg, rgba(3, 4, 5, 0.58) 0 30%, rgba(3, 4, 5, 0.18) 58%, rgba(3, 4, 5, 0.06)),
+    linear-gradient(180deg, rgba(3, 4, 5, 0.18), rgba(3, 4, 5, 0.82)),
+    image-set(
+      url("assets/appalachian-road-hero.webp") type("image/webp"),
+      url("assets/appalachian-road-hero.jpg") type("image/jpeg")
+    );
+  background-position: center;
+}
+
+.hero-grid {
+  inset: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0.5;
+  background:
+    radial-gradient(circle at 20% 24%, rgba(238, 227, 209, 0.11), transparent 9rem),
+    linear-gradient(115deg, transparent 0 56%, rgba(213, 31, 46, 0.18) 57%, transparent 59%),
+    repeating-linear-gradient(96deg, transparent 0 18px, rgba(238, 227, 209, 0.035) 19px, transparent 21px);
+}
+
+.hero-grid::before {
+  left: 8%;
+  bottom: 20%;
+  width: min(48vw, 620px);
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(238, 227, 209, 0.7), rgba(213, 31, 46, 0.48), transparent);
+  transform: rotate(-8deg);
+}
+
+.hero-grid::after {
+  display: none;
+}
+
+.hero-line {
+  border-bottom-color: rgba(238, 227, 209, 0.58);
+}
+
+.hero-milepost {
+  border-color: rgba(238, 227, 209, 0.24);
+  border-radius: 4px 18px 5px 14px;
+  background:
+    linear-gradient(180deg, rgba(20, 15, 12, 0.78), rgba(3, 4, 5, 0.72)),
+    repeating-linear-gradient(95deg, rgba(238, 227, 209, 0.04) 0 1px, transparent 1px 9px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+}
+
+.route-line {
+  width: min(880px, 100%);
+  height: 92px;
+  margin: 0.4rem 0 2rem;
+}
+
+.route-line::before {
+  top: 50%;
+  height: 14px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(238, 227, 209, 0.28) 8%, rgba(213, 31, 46, 0.78) 34%, rgba(238, 227, 209, 0.44) 63%, transparent),
+    repeating-linear-gradient(90deg, transparent 0 38px, rgba(238, 227, 209, 0.46) 38px 60px, transparent 60px 92px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25);
+  transform: rotate(-2.5deg);
+}
+
+.route-line::after {
+  content: "";
+  position: absolute;
+  left: 5%;
+  right: 10%;
+  top: 58%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(238, 227, 209, 0.52), transparent);
+  transform: rotate(1.2deg);
+}
+
+.route-line span {
+  top: auto;
+  bottom: 4px;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(238, 227, 209, 0.78);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: none;
+  transform: rotate(-2deg);
+}
+
+.route-line span:nth-child(1) { left: 7%; }
+.route-line span:nth-child(2) { left: 45%; }
+.route-line span:nth-child(3) { right: 7%; }
+
+.checkpoint,
+.service-panel,
+.note-shell,
+.contact-form,
+.learn-stack details {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(238, 227, 209, 0.2);
+  border-radius: 4px 18px 5px 13px;
+  background:
+    linear-gradient(180deg, rgba(17, 13, 11, 0.82), rgba(3, 4, 5, 0.78)),
+    radial-gradient(circle at 12% 10%, rgba(213, 31, 46, 0.12), transparent 12rem);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28), inset 0 0 0 1px rgba(238, 227, 209, 0.04);
+}
+
+.checkpoint::before,
+.service-panel::before,
+.note-shell::before,
+.contact-form::before,
+.learn-stack details::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background:
+    repeating-linear-gradient(100deg, transparent 0 10px, rgba(238, 227, 209, 0.05) 11px, transparent 13px),
+    radial-gradient(circle at 84% 16%, rgba(213, 31, 46, 0.14), transparent 8rem);
+}
+
+.checkpoint > *,
+.service-panel > *,
+.note-shell > *,
+.contact-form > *,
+.learn-stack details > * {
+  position: relative;
+  z-index: 1;
+}
+
+.target {
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  gap: 0.18rem;
+  border: 0;
+  border-bottom: 2px solid rgba(213, 31, 46, 0.66);
+  border-radius: 0;
+  color: var(--red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+.target::before {
+  content: "No.";
+  position: static;
+  width: auto;
+  height: auto;
+  margin-right: 0.16rem;
+  background: none;
+}
+
+.target::after {
+  display: none;
+}
+
+.checkpoint {
+  min-height: 260px;
+}
+
+.service-panel {
+  min-height: 268px;
+  grid-template-columns: 54px minmax(0, 1fr);
+}
+
+.service-panel:hover {
+  transform: translateY(-2px) rotate(-0.15deg);
+  background:
+    linear-gradient(180deg, rgba(28, 15, 13, 0.86), rgba(3, 4, 5, 0.8)),
+    radial-gradient(circle at 12% 10%, rgba(213, 31, 46, 0.2), transparent 12rem);
+}
+
+.species-strip {
+  border-top: 1px solid rgba(238, 227, 209, 0.28);
+  border-bottom: 1px solid rgba(238, 227, 209, 0.16);
+  padding-bottom: 1rem;
+  color: rgba(238, 227, 209, 0.92);
+}
+
+.stewardship-poster {
+  border-color: rgba(238, 227, 209, 0.22);
+  border-radius: 4px 22px 6px 16px;
+  background:
+    linear-gradient(180deg, rgba(3, 4, 5, 0.08), rgba(3, 4, 5, 0.54)),
+    image-set(
+      url("assets/appalachian-road-hero.webp") type("image/webp"),
+      url("assets/appalachian-road-hero.jpg") type("image/jpeg")
+    ) center / cover;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+}
+
+.stewardship-poster::before {
+  border-color: rgba(238, 227, 209, 0.2);
+  border-radius: 3px 16px 4px 12px;
+}
+
+.poster-roof,
+.poster-triangle {
+  display: none;
+}
+
+.poster-clover {
+  opacity: 0.74;
+  right: 13%;
+  top: 18%;
+}
+
+.poster-garnet {
+  opacity: 0.62;
+  left: 11%;
+}
+
+.learn-stack details {
+  border-color: rgba(238, 227, 209, 0.18);
+}
+
+.note-shell {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.note-tabs {
+  border-right-color: rgba(238, 227, 209, 0.16);
+}
+
+.note-tab {
+  border-bottom-color: rgba(238, 227, 209, 0.16);
+  background: rgba(3, 4, 5, 0.18);
+}
+
+.note-tab.is-active {
+  background:
+    linear-gradient(180deg, rgba(213, 31, 46, 0.9), rgba(116, 21, 28, 0.88));
+  color: var(--paper);
+}
+
+.contact-form {
+  background:
+    linear-gradient(180deg, rgba(238, 227, 209, 0.08), rgba(3, 4, 5, 0.74)),
+    rgba(3, 4, 5, 0.72);
+}
+
+.privacy-note,
+.submit-note {
+  margin: 0;
+  border: 1px solid rgba(238, 227, 209, 0.2);
+  border-radius: 3px 12px 4px 10px;
+  padding: 0.9rem 1rem;
+  color: var(--paper-soft);
+  background:
+    linear-gradient(180deg, rgba(238, 227, 209, 0.08), rgba(3, 4, 5, 0.24));
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.submit-note {
+  color: rgba(238, 227, 209, 0.78);
+}
+
+@media (max-width: 960px) {
+  .site-nav {
+    border-color: rgba(238, 227, 209, 0.22);
+    border-radius: 4px 18px 5px 13px;
+    background:
+      linear-gradient(180deg, rgba(6, 6, 5, 0.98), rgba(16, 11, 10, 0.97)),
+      repeating-linear-gradient(100deg, transparent 0 9px, rgba(238, 227, 209, 0.04) 10px, transparent 12px);
+  }
+
+  .service-panel {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    width: auto;
+    height: 50px;
+    max-width: 74px;
+  }
+
+  .brand-mark {
+    padding: 4px 7px 4px 5px;
+  }
+
+  .hero-bg {
+    background-position: 58% center;
+  }
+
+  .hero-grid {
+    opacity: 0.36;
+  }
+
+  .route-line {
+    height: 76px;
+  }
+
+  .route-line span {
+    bottom: 2px;
+    font-size: 0.76rem;
+  }
+
+  .service-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .target {
+    justify-self: start;
+  }
+
+  .note-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Transparency tuning: keep the road visible and make sections feel posted, not boxed. */
+body::before {
+  opacity: 0.44;
+}
+
+.hero {
+  min-height: 105svh;
+}
+
+.hero-bg {
+  filter: saturate(0.9) contrast(1.08);
+}
+
+.hero-inner {
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.78);
+}
+
+.section-head {
+  position: relative;
+  padding: 1.05rem 1.2rem;
+  border-left: 3px solid rgba(213, 31, 46, 0.58);
+  background:
+    linear-gradient(90deg, rgba(3, 4, 5, 0.52), rgba(3, 4, 5, 0.08)),
+    repeating-linear-gradient(100deg, transparent 0 11px, rgba(238, 227, 209, 0.035) 12px, transparent 14px);
+}
+
+.section-head::after {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  right: 12%;
+  bottom: -0.35rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(238, 227, 209, 0.46), transparent);
+}
+
+.checkpoint,
+.service-panel,
+.note-shell,
+.contact-form,
+.learn-stack details {
+  background:
+    linear-gradient(180deg, rgba(17, 13, 11, 0.62), rgba(3, 4, 5, 0.52)),
+    radial-gradient(circle at 12% 10%, rgba(213, 31, 46, 0.1), transparent 12rem);
+  backdrop-filter: blur(2px) saturate(0.9);
+}
+
+.checkpoint {
+  min-height: 238px;
+  transform: rotate(-0.2deg);
+}
+
+.checkpoint:nth-child(2) {
+  transform: rotate(0.15deg);
+}
+
+.checkpoint:nth-child(3) {
+  transform: rotate(-0.12deg);
+}
+
+.service-panel {
+  min-height: 246px;
+  border-left: 3px solid rgba(213, 31, 46, 0.52);
+}
+
+.service-panel:nth-child(2),
+.service-panel:nth-child(3) {
+  border-left-color: rgba(238, 227, 209, 0.24);
+}
+
+.service-panel h3 {
+  color: rgba(238, 227, 209, 0.94);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+.service-panel p,
+.checkpoint p,
+.note-panel p,
+.learn-stack p,
+.contact-copy p {
+  color: rgba(238, 227, 209, 0.86);
+}
+
+.stewardship-poster {
+  min-height: 620px;
+  background:
+    linear-gradient(180deg, rgba(3, 4, 5, 0.02), rgba(3, 4, 5, 0.34)),
+    image-set(
+      url("assets/appalachian-road-hero.webp") type("image/webp"),
+      url("assets/appalachian-road-hero.jpg") type("image/jpeg")
+    ) center / cover;
+}
+
+.note-shell {
+  background:
+    linear-gradient(180deg, rgba(3, 4, 5, 0.5), rgba(3, 4, 5, 0.42)),
+    radial-gradient(circle at 80% 18%, rgba(213, 31, 46, 0.12), transparent 10rem);
+}
+
+.note-panel h3,
+.contact-copy h2 {
+  color: #e22a36;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-color: rgba(238, 227, 209, 0.24);
+  background: rgba(3, 4, 5, 0.38);
+}
+
+.privacy-note,
+.submit-note {
+  background:
+    linear-gradient(180deg, rgba(238, 227, 209, 0.1), rgba(3, 4, 5, 0.18)),
+    rgba(3, 4, 5, 0.24);
+}
+
+@media (max-width: 960px) {
+  .checkpoint,
+  .checkpoint:nth-child(2),
+  .checkpoint:nth-child(3) {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  body::before {
+    opacity: 0.36;
+    background-position: 58% top;
+  }
+
+  .hero {
+    min-height: 98svh;
+  }
+
+  .section-head {
+    padding: 0.9rem 1rem;
+  }
+
+  .service-panel {
+    min-height: 228px;
+  }
+
+  .stewardship-poster {
+    min-height: 420px;
+  }
+}
