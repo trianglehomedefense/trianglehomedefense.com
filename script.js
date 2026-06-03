@@ -35,3 +35,24 @@ if ('IntersectionObserver' in window) {
 } else {
   revealItems.forEach((item) => item.classList.add('is-visible'));
 }
+
+const noteTabs = document.querySelectorAll('[data-note-tab]');
+const notePanels = document.querySelectorAll('[data-note-panel]');
+
+noteTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.getAttribute('data-note-tab');
+
+    noteTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-selected', String(isActive));
+    });
+
+    notePanels.forEach((panel) => {
+      const isActive = panel.getAttribute('data-note-panel') === target;
+      panel.classList.toggle('is-active', isActive);
+      panel.toggleAttribute('hidden', !isActive);
+    });
+  });
+});

@@ -19,14 +19,14 @@ Then open `http://localhost:8000`.
 GitHub Pages should publish from the `main` branch root. The custom domain is controlled by `CNAME` and must remain:
 
 ```text
-www.trianglehomedefense.com
+trianglehomedefense.com
 ```
 
 Do not delete `CNAME`, `robots.txt`, `sitemap.xml`, brand SVG files, or any hosting/verification files added later.
 
 ## Post-Deploy Checks
 
-- Open `https://www.trianglehomedefense.com/`.
+- Open `https://trianglehomedefense.com/`.
 - Check Home, Services, Inspections, Prevention, Stewardship, About, and Contact.
 - Confirm the contact form uses `mailto:info@trianglehomedefense.com`.
 - Confirm phone/email and service area are correct.
