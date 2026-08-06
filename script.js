@@ -2,57 +2,44 @@ const navToggle = document.querySelector('[data-nav-toggle]');
 const nav = document.querySelector('[data-nav]');
 
 if (navToggle && nav) {
+  const label = navToggle.querySelector('.sr-only');
+
+  const setMenuState = (open) => {
+    navToggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+    if (label) label.textContent = open ? 'Close menu' : 'Open menu';
+  };
+
   navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!isOpen));
-    nav.classList.toggle('is-open', !isOpen);
+    setMenuState(navToggle.getAttribute('aria-expanded') !== 'true');
   });
 
   nav.addEventListener('click', (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      navToggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('is-open');
+    if (event.target instanceof HTMLAnchorElement) setMenuState(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+      setMenuState(false);
+      navToggle.focus();
     }
   });
-}
 
-const revealItems = document.querySelectorAll('.reveal');
-
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.16 }
-  );
-
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
-
-const noteTabs = document.querySelectorAll('[data-note-tab]');
-const notePanels = document.querySelectorAll('[data-note-panel]');
-
-noteTabs.forEach((tab) => {
-  tab.addEventListener('click', () => {
-    const target = tab.getAttribute('data-note-tab');
-
-    noteTabs.forEach((item) => {
-      const isActive = item === tab;
-      item.classList.toggle('is-active', isActive);
-      item.setAttribute('aria-selected', String(isActive));
-    });
-
-    notePanels.forEach((panel) => {
-      const isActive = panel.getAttribute('data-note-panel') === target;
-      panel.classList.toggle('is-active', isActive);
-      panel.toggleAttribute('hidden', !isActive);
-    });
+  document.addEventListener('click', (event) => {
+    if (
+      navToggle.getAttribute('aria-expanded') === 'true' &&
+      event.target instanceof Node &&
+      !nav.contains(event.target) &&
+      !navToggle.contains(event.target)
+    ) {
+      setMenuState(false);
+    }
   });
-});
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1060) setMenuState(false);
+  });
+}
+
+const year = document.querySelector('[data-year]');
+if (year) year.textContent = String(new Date().getFullYear());
